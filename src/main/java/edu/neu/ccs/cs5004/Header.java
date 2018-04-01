@@ -5,4 +5,8 @@ package edu.neu.ccs.cs5004;
  */
 public class Header {
   private String headerName;
+
+  public Header(String headerName) {
+    this.headerName = headerName;
+  }
 }
