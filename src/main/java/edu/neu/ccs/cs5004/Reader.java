@@ -22,13 +22,13 @@ public class Reader {
 
       String[] header = breader.readLine().split(",");
       for(int i = 0; i < header.length; i++) {
-        header[i] = header[i].substring(1, header[i].length() - 1);
+        header[i] = header[i].replace("\"", "");
         members.getHeaderMap().put(new Header(header[i]), i);
       }
       while ((line = breader.readLine()) != null) {
         String[] info = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
         for(int i = 0; i < info.length; i++) {
-          info[i] = info[i].substring(1, info[i].length() - 1);
+          info[i] = info[i].replace("\"", "");
         }
         MemberInfo memberInfo = new MemberInfo(info);
         members.getMembersInfo().add(memberInfo);
