@@ -7,5 +7,7 @@ package edu.neu.ccs.cs5004;
 public class MemberInfo {
   private String[] info;
 
-
+  public MemberInfo(String[] info) {
+    this.info = info;
+  }
 }
