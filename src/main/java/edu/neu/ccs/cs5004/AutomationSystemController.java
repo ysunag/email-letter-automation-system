@@ -4,28 +4,25 @@ package edu.neu.ccs.cs5004;
  * Represents the automation system to generate communicating files.
  */
 public class AutomationSystemController {
-  private Printer printer;
   private Reader reader;
   private Write write;
   private ParseArgument parser;
 
   public AutomationSystemController(String[] args) {
-    printer = new ConsolePrinter();
     reader = new Reader();
     write = new Write();
     parser = new ParseArgument(args);
   }
 
   public void runAutomationSystem() {
-    if (!parser.checkArguments()) {
-
-
-    } else {
-      generateMessages();
+    String error = parser.checkArguments();
+    if (error != "") {
+      throw new IllegalArgumentException(error);
     }
+    generateMessages();
   }
 
-  public void generateMessages() {
+  protected void generateMessages() {
     Members members = new Members();
     reader.readMembersInfo(parser.getInput(), members);
     GeneratorI generator = GeneratorI.createGenerator(

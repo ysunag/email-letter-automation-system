@@ -16,8 +16,9 @@ public class Generator implements GeneratorI{
   }
 
   public List<String> replacePlaceHolder(MemberInfo member) {
-
+    return null;
   }
+
 
 
 }
