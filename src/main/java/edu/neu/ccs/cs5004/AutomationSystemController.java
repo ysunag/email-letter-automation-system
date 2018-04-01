@@ -30,8 +30,10 @@ public class AutomationSystemController {
     reader.readMembersInfo(parser.getInput(), members);
     GeneratorI generator = GeneratorI.createGenerator(
             reader.readTemplates(parser.getTemplate().getTemplateName()), members);
+    int i = 0;
     for(MemberInfo member : members.getMembersInfo()) {
-      write.writeIntoDir(parser.getDirPath(), generator.replacePlaceHolder(member));
+      write.writeIntoDir(parser.getDirPath().getDirPath() + "/" + i++ + ".txt",
+              generator.replacePlaceHolder(member));
     }
   }
 

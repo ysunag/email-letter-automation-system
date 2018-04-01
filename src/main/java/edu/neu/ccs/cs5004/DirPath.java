@@ -5,4 +5,12 @@ package edu.neu.ccs.cs5004;
  */
 public class DirPath {
   private String dirPath;
+
+  public DirPath(String dirPath) {
+    this.dirPath = dirPath;
+  }
+
+  public String getDirPath() {
+    return dirPath;
+  }
 }
