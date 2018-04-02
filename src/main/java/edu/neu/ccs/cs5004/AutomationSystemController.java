@@ -1,36 +1,41 @@
 package edu.neu.ccs.cs5004;
 
-  /**
-   * Represents the automation system to generate communicating files.
-   */
-  public class AutomationSystemController {
-    private Reader reader;
-    private Write write;
-    private ParseArgument parser;
+import java.io.File;
 
-    public AutomationSystemController(String[] args) {
-      reader = new Reader();
-      write = new Write();
-      parser = new ParseArgument(args);
-    }
+/**
+ * Represents the automation system to generate communicating files.
+ */
+public class AutomationSystemController {
+  private Reader reader;
+  private Write write;
+  private ParseArgument parser;
 
-    public void runAutomationSystem() {
-      String error = parser.checkArguments();
-      if (error != "") {
-        throw new IllegalArgumentException(error);
-      }
-      generateMessages();
-    }
+  public AutomationSystemController(String[] args) {
+    reader = new Reader();
+    write = new Write();
+    parser = new ParseArgument(args);
+  }
 
-    protected void generateMessages() {
-      Members members = new Members();
-      reader.readMembersInfo(parser.getInput(), members);
-      GeneratorI generator = GeneratorI.createGenerator(
-              reader.readTemplates(parser.getTemplate().getTemplateName()), members);
-      int i = 0;
-      for(MemberInfo member : members.getMembersInfo()) {
-        write.writeIntoDir("./" + parser.getDirPath().getDirPath() + "/" + i++ + ".txt",
-                generator.replacePlaceHolder(member));
-      }
+  public void runAutomationSystem() {
+    String error = parser.checkArguments();
+    if (error != "") {
+      throw new IllegalArgumentException(error);
     }
+    generateMessages();
+  }
+
+  protected void generateMessages() {
+    Members members = new Members();
+    reader.readMembersInfo(parser.getInput(), members);
+    GeneratorI generator = GeneratorI.createGenerator(
+            reader.readTemplates(parser.getTemplate().getTemplateName()), members);
+    String path = "./src/main/java/edu/neu/ccs/cs5004/" + parser.getDirPath().getDirPath();
+    File dir = new File(path);
+    dir.mkdir();
+    int i = 0;
+    for (MemberInfo member : members.getMembersInfo()) {
+      write.writeIntoDir(path + "/" + i++ + ".txt",
+              generator.replacePlaceHolder(member));
+    }
+  }
 }

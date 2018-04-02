@@ -25,7 +25,10 @@ public class Reader {
         header[i] = header[i].replace("\"", "");
         members.getHeaderMap().put(new Header(header[i]), i);
       }
-      while ((line = breader.readLine()) != null && line.equals("")) {
+      while ((line = breader.readLine()) != null) {
+        if(line.equals("")) {
+          break;
+        }
         String[] info = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
         for (int i = 0; i < info.length; i++) {
           info[i] = info[i].replace("\"", "");
