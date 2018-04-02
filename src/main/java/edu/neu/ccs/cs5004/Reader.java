@@ -14,20 +14,20 @@ import java.util.List;
 public class Reader {
 
   public void readMembersInfo(FileName file, Members members) {
-    String csvFile = "./src/" + file;
+    String csvFile = "./src/main/java/edu/neu/ccs/cs5004/input/" + file.getFileName();
     String line;
 
     try (BufferedReader breader = new BufferedReader(new InputStreamReader(
             new FileInputStream(csvFile), "UTF-8"))) {
 
       String[] header = breader.readLine().split(",");
-      for(int i = 0; i < header.length; i++) {
+      for (int i = 0; i < header.length; i++) {
         header[i] = header[i].replace("\"", "");
         members.getHeaderMap().put(new Header(header[i]), i);
       }
-      while ((line = breader.readLine()) != null) {
+      while ((line = breader.readLine()) != null && line.equals("")) {
         String[] info = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-        for(int i = 0; i < info.length; i++) {
+        for (int i = 0; i < info.length; i++) {
           info[i] = info[i].replace("\"", "");
         }
         MemberInfo memberInfo = new MemberInfo(info);
@@ -44,7 +44,7 @@ public class Reader {
   }
 
   public List<String> readTemplates(FileName file) {
-    String csvFile = "./src/" + file;
+    String csvFile = "./src/main/java/edu/neu/ccs/cs5004/input/" + file.getFileName();
     String line;
     List<String> result = new ArrayList<>();
     try (BufferedReader breader = new BufferedReader(new InputStreamReader(

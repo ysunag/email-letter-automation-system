@@ -14,7 +14,7 @@ public class Write {
   public void writeIntoDir(String file, List<String> content) {
     try (BufferedWriter outputFile = new BufferedWriter(new OutputStreamWriter(
             new FileOutputStream(file), "UTF-8"))) {
-      for(String line : content) {
+      for (String line : content) {
         outputFile.write(line);
         outputFile.newLine();
       }
@@ -23,7 +23,6 @@ public class Write {
       ioe.printStackTrace();
     }
   }
-
 
 
 }

@@ -16,6 +16,10 @@ public class FileName {
     this.fileName = fileName;
   }
 
+  public String getFileName() {
+    return fileName;
+  }
+
   @Override
   public boolean equals(Object other) {
     if (this == other) {

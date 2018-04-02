@@ -29,7 +29,7 @@ package edu.neu.ccs.cs5004;
               reader.readTemplates(parser.getTemplate().getTemplateName()), members);
       int i = 0;
       for(MemberInfo member : members.getMembersInfo()) {
-        write.writeIntoDir(parser.getDirPath().getDirPath() + "/" + i++ + ".txt",
+        write.writeIntoDir("./" + parser.getDirPath().getDirPath() + "/" + i++ + ".txt",
                 generator.replacePlaceHolder(member));
       }
     }
