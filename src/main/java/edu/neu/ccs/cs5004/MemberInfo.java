@@ -10,4 +10,8 @@ public class MemberInfo {
   public MemberInfo(String[] info) {
     this.info = info;
   }
+
+  public String[] getInfo() {
+    return info;
+  }
 }

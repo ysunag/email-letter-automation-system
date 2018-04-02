@@ -50,12 +50,7 @@ public class Reader {
     try (BufferedReader breader = new BufferedReader(new InputStreamReader(
             new FileInputStream(csvFile), "UTF-8"))) {
       while ((line = breader.readLine()) != null) {
-        int index = line.indexOf("[[");
-        while(index > 0) {
-          int end = line.indexOf("]]", index);
-          result.add(line.substring(index + 2, end));
-          index = line.indexOf("[[", index);
-        }
+        result.add(line);
       }
     } catch (FileNotFoundException fnfe) {
       System.out.println("*** OUPS! A file was not found : " + fnfe.getMessage());
