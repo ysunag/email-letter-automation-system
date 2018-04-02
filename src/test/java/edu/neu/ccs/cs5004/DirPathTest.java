@@ -46,4 +46,9 @@ public class DirPathTest {
     Assert.assertEquals(!dirPathTest.equals(diffDirPath),
             dirPathTest.hashCode() != diffDirPath.hashCode());
   }
+
+  @Test
+  public void getDirPath() {
+    Assert.assertEquals("email", dirPathTest.getDirPath());
+  }
 }
