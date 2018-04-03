@@ -1,4 +1,7 @@
-package edu.neu.ccs.cs5004;
+package edu.neu.ccs.cs5004.process;
+
+import edu.neu.ccs.cs5004.model.MemberInfo;
+import edu.neu.ccs.cs5004.model.Members;
 
 import java.util.List;
 

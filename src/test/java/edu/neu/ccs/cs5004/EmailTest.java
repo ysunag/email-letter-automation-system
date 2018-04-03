@@ -4,7 +4,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import edu.neu.ccs.cs5004.model.Email;
+import edu.neu.ccs.cs5004.model.EmailTemplate;
+import edu.neu.ccs.cs5004.model.FileName;
+import edu.neu.ccs.cs5004.model.Letter;
 
 public class EmailTest {
   private Email emailTest;

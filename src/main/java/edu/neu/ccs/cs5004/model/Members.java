@@ -1,4 +1,4 @@
-package edu.neu.ccs.cs5004;
+package edu.neu.ccs.cs5004.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,10 +17,20 @@ public class Members {
     this.headerMap = new HashMap<>();
   }
 
+  /**
+   * Get the member information.
+   *
+   * @return The list of member information.
+   */
   public List<MemberInfo> getMembersInfo() {
     return membersInfo;
   }
 
+  /**
+   * Get the map of the header.
+   *
+   * @return The map of the header and index.
+   */
   public Map<Header, Integer> getHeaderMap() {
     return headerMap;
   }

@@ -1,0 +1,27 @@
+package edu.neu.ccs.cs5004.model;
+
+/**
+ * Represents the member information for a member in the input file.
+ */
+
+public class MemberInfo {
+  private String[] info;
+
+  /**
+   * The instructor of the MemberInfo.
+   *
+   * @param info The information of the member.
+   */
+  public MemberInfo(String[] info) {
+    this.info = info;
+  }
+
+  /**
+   * Get the information of the member.
+   *
+   * @return The string array represents the information.
+   */
+  public String[] getInfo() {
+    return info;
+  }
+}

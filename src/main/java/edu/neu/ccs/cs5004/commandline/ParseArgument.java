@@ -1,6 +1,10 @@
-package edu.neu.ccs.cs5004;
+package edu.neu.ccs.cs5004.commandline;
 
 import java.util.Arrays;
+
+import edu.neu.ccs.cs5004.model.DirPath;
+import edu.neu.ccs.cs5004.model.FileName;
+import edu.neu.ccs.cs5004.model.Template;
 
 /**
  * Represents parsing the command line arguments to get information for the automation system.

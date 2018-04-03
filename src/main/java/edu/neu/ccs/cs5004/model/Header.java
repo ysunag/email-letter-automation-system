@@ -1,4 +1,4 @@
-package edu.neu.ccs.cs5004;
+package edu.neu.ccs.cs5004.model;
 
 import java.util.Objects;
 
@@ -8,6 +8,11 @@ import java.util.Objects;
 public class Header {
   private String headerName;
 
+  /**
+   * The constructor of the Header.
+   *
+   * @param headerName the name of the header.
+   */
   public Header(String headerName) {
     this.headerName = headerName;
   }

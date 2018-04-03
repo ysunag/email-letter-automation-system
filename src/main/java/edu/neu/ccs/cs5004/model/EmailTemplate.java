@@ -1,15 +1,16 @@
-package edu.neu.ccs.cs5004;
-
+package edu.neu.ccs.cs5004.model;
 
 /**
- * Represents the template for generating letters to members.
+ * Represents the template for generating emails to members.
  */
-public class LetterTemplate extends AbstractTemplate{
+public class EmailTemplate extends AbstractTemplate {
+
   /**
-   * Creates a new letter template with the given template file name.
+   * Creates a new email template with the given template file name.
+   *
    * @param templateName the given template file name
    */
-  public LetterTemplate(FileName templateName) {
+  public EmailTemplate(FileName templateName) {
     super(templateName);
   }
 
@@ -30,6 +31,7 @@ public class LetterTemplate extends AbstractTemplate{
   @Override
   public int hashCode() {
 
-    return super.hashCode() * 53 + 53;
+    return super.hashCode() * 23 + 23;
   }
+
 }

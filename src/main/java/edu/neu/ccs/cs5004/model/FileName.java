@@ -1,4 +1,4 @@
-package edu.neu.ccs.cs5004;
+package edu.neu.ccs.cs5004.model;
 
 import java.util.Objects;
 
@@ -10,12 +10,18 @@ public class FileName {
 
   /**
    * Creates a new file name with the given file name.
+   *
    * @param fileName the given file name
    */
   public FileName(String fileName) {
     this.fileName = fileName;
   }
 
+  /**
+   * Return the file name.
+   *
+   * @return String
+   */
   public String getFileName() {
     return fileName;
   }

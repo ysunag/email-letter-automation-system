@@ -1,13 +1,17 @@
-package edu.neu.ccs.cs5004;
+package edu.neu.ccs.cs5004.model;
+
+import edu.neu.ccs.cs5004.commandline.Action;
 
 /**
- * Represents the action of generating email to members.
+ * Represents the action of generating letter to members.
  */
-public class Email implements Action{
+public class Letter implements Action {
+
   @Override
   public String toString() {
-    return "--email";
+    return "--letter";
   }
+
   @Override
   public boolean equals(Object other) {
     if (this == other) {
@@ -22,7 +26,6 @@ public class Email implements Action{
   @Override
   public int hashCode() {
 
-    return 31;
+    return 41;
   }
-
 }

@@ -1,4 +1,8 @@
-package edu.neu.ccs.cs5004;
+package edu.neu.ccs.cs5004.process;
+
+import edu.neu.ccs.cs5004.model.Header;
+import edu.neu.ccs.cs5004.model.MemberInfo;
+import edu.neu.ccs.cs5004.model.Members;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,16 +20,21 @@ public class Generator implements GeneratorI {
     this.headerMap = members.getHeaderMap();
   }
 
+  /**
+   * Replace the key words in template with member information.
+   *
+   * @param member The memberInfo.
+   * @return The list of message with right information.
+   */
   public List<String> replacePlaceHolder(MemberInfo member) {
     List<String> result = new ArrayList<>();
-    for (String str : templateContents) {
-      String line = new String(str);
+    for (String line : templateContents) {
       int index = line.indexOf("[[");
       while (index > 0) {
         int end = line.indexOf("]]", index);
         String template = line.substring(index + 2, end);
-        int i = headerMap.get(new Header(template));
-        line = line.replaceAll("\\[\\[" + template + "\\]\\]", member.getInfo()[i]);
+        int header = headerMap.get(new Header(template));
+        line = line.replaceAll("\\[\\[" + template + "\\]\\]", member.getInfo()[header]);
         index = line.indexOf("[[");
       }
       result.add(line);
