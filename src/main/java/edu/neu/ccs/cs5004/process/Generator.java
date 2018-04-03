@@ -33,7 +33,13 @@ public class Generator implements GeneratorI {
       while (index > 0) {
         int end = line.indexOf("]]", index);
         String template = line.substring(index + 2, end);
-        int header = headerMap.get(new Header(template));
+        int header = -1;
+        try {
+          header = headerMap.get(new Header(template));
+        } catch (NullPointerException nullPointerEx) {
+          System.out.println("Don't contains this header:" + template);
+          nullPointerEx.printStackTrace();
+        }
         line = line.replaceAll("\\[\\[" + template + "\\]\\]", member.getInfo()[header]);
         index = line.indexOf("[[");
       }
