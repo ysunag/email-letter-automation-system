@@ -13,7 +13,10 @@ public class MemberInfo {
    * @param info The information of the member.
    */
   public MemberInfo(String[] info) {
-    this.info = info;
+    this.info = new String[info.length];
+    for (int i = 0; i < info.length; i++) {
+      this.info[i] = info[i];
+    }
   }
 
   /**
@@ -22,6 +25,10 @@ public class MemberInfo {
    * @return The string array represents the information.
    */
   public String[] getInfo() {
-    return info;
+    String[] res = new String[info.length];
+    for (int i = 0; i < info.length; i++) {
+      res[i] = info[i];
+    }
+    return res;
   }
 }

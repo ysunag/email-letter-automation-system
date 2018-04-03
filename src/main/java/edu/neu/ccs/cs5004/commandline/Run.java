@@ -1,4 +1,4 @@
-package edu.neu.ccs.cs5004;
+package edu.neu.ccs.cs5004.commandline;
 
 import edu.neu.ccs.cs5004.process.AutomationSystemController;
 

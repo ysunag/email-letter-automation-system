@@ -7,16 +7,16 @@ import java.util.Objects;
  * Represents a directory.
  */
 public class DirPath {
-  private String dirPath;
+  private String directPath;
 
   /**
    * Creates a new directory path with the given directory path.
    *
-   * @param dirPath the given directory path
+   * @param directPath the given directory path
    */
 
-  public DirPath(String dirPath) {
-    this.dirPath = dirPath;
+  public DirPath(String directPath) {
+    this.directPath = directPath;
   }
 
   /**
@@ -26,7 +26,7 @@ public class DirPath {
    */
 
   public String getDirPath() {
-    return dirPath;
+    return directPath;
   }
 
 
@@ -39,13 +39,13 @@ public class DirPath {
       return false;
     }
     DirPath dirPath1 = (DirPath) other;
-    return Objects.equals(dirPath, dirPath1.dirPath);
+    return Objects.equals(directPath, dirPath1.directPath);
   }
 
   @Override
   public int hashCode() {
 
-    return Objects.hash(dirPath);
+    return Objects.hash(directPath);
   }
 }
 

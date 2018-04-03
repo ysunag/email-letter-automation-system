@@ -1,7 +1,5 @@
 package edu.neu.ccs.cs5004.model;
 
-import edu.neu.ccs.cs5004.commandline.Action;
-
 /**
  * Represents the action of generating email to members.
  */

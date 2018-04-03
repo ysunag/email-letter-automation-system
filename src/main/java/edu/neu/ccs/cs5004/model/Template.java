@@ -1,7 +1,5 @@
 package edu.neu.ccs.cs5004.model;
 
-import edu.neu.ccs.cs5004.commandline.Action;
-
 /**
  * Represents a template to communicate with members.
  */
@@ -12,7 +10,7 @@ public interface Template {
    * @param action       the given action type
    * @param templateName the given template file name
    * @return a new email template with the given file name if the action is an email, or a new
-   * letter template with the given file name if the action is a letter.
+   *        letter template with the given file name if the action is a letter.
    */
   static Template createTemplate(Action action, String templateName) {
     if (action.equals(new Email())) {

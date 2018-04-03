@@ -1,5 +1,11 @@
 package edu.neu.ccs.cs5004.process;
 
+
+import edu.neu.ccs.cs5004.model.FileName;
+import edu.neu.ccs.cs5004.model.Header;
+import edu.neu.ccs.cs5004.model.MemberInfo;
+import edu.neu.ccs.cs5004.model.Members;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,10 +14,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.neu.ccs.cs5004.model.FileName;
-import edu.neu.ccs.cs5004.model.Header;
-import edu.neu.ccs.cs5004.model.MemberInfo;
-import edu.neu.ccs.cs5004.model.Members;
 
 /**
  * Represents a reader to reads the member information file and template file.

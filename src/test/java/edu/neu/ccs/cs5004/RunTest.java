@@ -3,7 +3,8 @@ package edu.neu.ccs.cs5004;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import edu.neu.ccs.cs5004.commandline.Run;
+
 
 public class RunTest {
   String[] args;

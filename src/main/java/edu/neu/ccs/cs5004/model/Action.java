@@ -1,7 +1,4 @@
-package edu.neu.ccs.cs5004.commandline;
-
-import edu.neu.ccs.cs5004.model.Email;
-import edu.neu.ccs.cs5004.model.Letter;
+package edu.neu.ccs.cs5004.model;
 
 /**
  * Represents an action of generate communicating files.
@@ -11,11 +8,11 @@ public interface Action {
   String LETTER = "--letter";
 
   /**
-   * Creates a new action according to the given argument
+   * Creates a new action according to the given argument.
    *
    * @param arg the given argument
    * @return an email action if the given argument is "--email", or a letter action if the given
-   * argument is "--letter"
+   *        argument is "--letter"
    */
   static Action createAction(String arg) {
     if (arg.equals(EMAIL)) {

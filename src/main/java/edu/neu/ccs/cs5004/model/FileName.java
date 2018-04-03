@@ -6,15 +6,15 @@ import java.util.Objects;
  * Represents a file name.
  */
 public class FileName {
-  private String fileName;
+  private String theFileName;
 
   /**
    * Creates a new file name with the given file name.
    *
-   * @param fileName the given file name
+   * @param theFileName the given file name
    */
-  public FileName(String fileName) {
-    this.fileName = fileName;
+  public FileName(String theFileName) {
+    this.theFileName = theFileName;
   }
 
   /**
@@ -23,7 +23,7 @@ public class FileName {
    * @return String
    */
   public String getFileName() {
-    return fileName;
+    return theFileName;
   }
 
   @Override
@@ -35,12 +35,12 @@ public class FileName {
       return false;
     }
     FileName fileName1 = (FileName) other;
-    return Objects.equals(fileName, fileName1.fileName);
+    return Objects.equals(theFileName, fileName1.theFileName);
   }
 
   @Override
   public int hashCode() {
 
-    return Objects.hash(fileName);
+    return Objects.hash(theFileName);
   }
 }
